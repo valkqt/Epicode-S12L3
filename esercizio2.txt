@@ -1,0 +1,46 @@
+1) select count(*)
+from [northwind].[dbo].[Orders]
+
+2) select count(*)
+from [northwind].[dbo].[Customers]
+
+3) select count(*)
+from [northwind].[dbo].[Customers]
+where City = 'London'
+
+4) select avg(Freight)
+from [northwind].[dbo].[Orders]
+
+5) select avg(Freight)
+from [northwind].[dbo].[Orders]
+where CustomerID = 'BOTTM'
+
+6) select CustomerID, sum(Freight) as Total
+from [northwind].[dbo].[Orders]
+group by CustomerID
+
+7) select City, count(*) as Count
+from [northwind].[dbo].[Customers]
+group by City
+
+8) select OrderID, sum(UnitPrice * Quantity) as [Total]
+from [northwind].[dbo].[Order Details]
+group by OrderId
+
+9) select OrderID, sum(UnitPrice * Quantity) as [Total]
+from [northwind].[dbo].[Order Details]
+where OrderId=10248
+group by OrderId
+
+10) select C.CategoryName, count (*)  
+from [northwind].[dbo].[Products] P inner join [northwind].[dbo].[Categories] C
+on P.CategoryID = C.CategoryID
+group by C.CategoryName
+
+11) select ShipCountry, count(*) as [Count]
+from [northwind].[dbo].[Orders]
+group by ShipCountry
+
+12) select ShipCountry, AVG(Freight) as [Average Shipping Cost]
+from [northwind].[dbo].[Orders]
+group by ShipCountry
